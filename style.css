@@ -1,0 +1,43 @@
+body
+{
+    background-color: rgb(252, 252, 227);
+    color: black;
+}
+
+th{
+    border: 2px solid red;
+}
+td{
+    border: 2px solid black;
+    color: blue;
+}
+h4{
+    color: rgb(48, 202, 43);
+}
+ol{
+    color: rgb(150, 22, 33);
+}
+dd{
+    color: rgb(209, 41, 41);
+}
+
+form{
+    color: blue;
+}
+
+@media screen and (min-width: 200px ) {
+    body{
+        font-size: auto;
+    }
+}
+
+div{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+}
+
+@media screen and (min-width: 620px) {
+body{
+    font-size: 20px;
+}
+}

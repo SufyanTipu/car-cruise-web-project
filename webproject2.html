@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - Car Showroom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Section container styling */
+        .testimonies-section {
+            padding: 50px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Section heading styling */
+        .testimonies-section h2 {
+            text-align: center;
+            font-size: 2rem; /* Reduced font size for better balance */
+            margin-bottom: 30px;
+            color: #1d3557;
+        }
+
+        /* Slider container for the reviews */
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Individual review card styling */
+        .review {
+            flex: 0 0 30%; 
+            text-align: left;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
+        }
+
+        /* Customer photo styling */
+        .review img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 15px;
+        }
+
+        /* Customer name styling */
+        .review h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #2d6a4f;
+        }
+
+        /* Review text styling */
+        .review p {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #495057;
+            line-height: 1.4;
+        }
+
+        /* Controls for navigation buttons */
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Navigation button styling */
+        .controls button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #1d3557;
+            color: #ffffff;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Button hover effect */
+        .controls button:hover {
+            background-color: #457b9d;
+        }
+    </style>
+</head>
+<body>
+    <section class="testimonies-section">
+        <!-- Section heading -->
+        <h2>What Our Customers Say</h2>
+
+        <!-- Slider container for customer reviews -->
+        <div class="slider-container" id="slider">
+            <!-- Review card 1 -->
+            <div class="review">
+                <img src="customer1.jpg" alt="Customer Photo">
+                <h3>John Doe</h3>
+                <p>"I had an amazing experience buying my car here! The staff was friendly and helpful."</p>
+            </div>
+
+            <!-- Review card 2 -->
+            <div class="review">
+                <img src="customer2.jpg" alt="Customer Photo">
+                <h3>Jane Smith</h3>
+                <p>"Wide selection of vehicles and great financing options. Highly recommend this showroom!"</p>
+            </div>
+
+            <!-- Review card 3 -->
+            <div class="review">
+                <img src="customer3.jpg" alt="Customer Photo">
+                <h3>Michael Brown</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+
+            <!-- Review card 4 -->
+            <div class="review">
+                <img src="customer4.jpg" alt="Customer Photo">
+                <h3>Steven Smith</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+
+            <!-- Review card 5 -->
+            <div class="review">
+                <img src="customer5.jpg" alt="Customer Photo">
+                <h3>Michael Starc</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+
+            <!-- Review card 6 -->
+            <div class="review">
+                <img src="customer6.jpg" alt="Customer Photo">
+                <h3>Joe Root</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+
+            <!-- Review card 7 -->
+            <div class="review">
+                <img src="customer7.jpg" alt="Customer Photo">
+                <h3>Benjiman Stokes</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+
+            <!-- Review card 8 -->
+            <div class="review">
+                <img src="customer8.jpg" alt="Customer Photo">
+                <h3>Brendon McClumm</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+
+            <!-- Review card 9 -->
+            <div class="review">
+                <img src="customer9.jpg" alt="Customer Photo">
+                <h3>Martin Guptil</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+
+            <!-- Review card 10 -->
+            <div class="review">
+                <img src="customer10.jpg" alt="Customer Photo">
+                <h3>Dale Steyn</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+
+        </div>
+
+        <!-- Navigation controls -->
+        <div class="controls">
+            <button onclick="prevSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+    </section>
+
+    <script>
+        // Reference to the slider container
+        const slider = document.getElementById('slider');
+        let currentIndex = 0;
+
+        /**
+         * Function to display the slide at the given index
+         * @param {number} index - Index of the slide to display
+         */
+        function showSlide(index) {
+            const slideWidth = slider.children[0].offsetWidth; // Get the width of a single review card
+            slider.style.transform = `translateX(-${index * slideWidth}px)`; // Shift the slider
+        }
+
+        /**
+         * Function to move to the next slide
+         */
+        function nextSlide() {
+            if (currentIndex < slider.children.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Loop back to the first slide
+            }
+            showSlide(currentIndex);
+        }
+
+        /**
+         * Function to move to the previous slide
+         */
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = slider.children.length - 1; // Loop to the last slide
+            }
+            showSlide(currentIndex);
+        }
+
+        // Automatically switch slides every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>

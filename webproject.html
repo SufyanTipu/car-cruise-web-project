@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - Car Showroom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .testimonies-section {
+            padding: 50px;
+            background-color: #fcc100;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonies-section h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #3167b3;
+        }
+        .review {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #b2b9c0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .review img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .review h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #570815;
+        }
+        .review p {
+            margin: 10px 0 0;
+            font-size: 1rem;
+            color: #000000;
+        }
+        @media (min-width: 768px) {
+            .reviews-container {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            .review {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="testimonies-section">
+        <h1>What Our Customers Say</h1>
+        <div class="reviews-container">
+            <div class="review">
+                <img src="customer1.jpg" alt="Customer Photo">
+                <h3>Muhammad Sufyan Tipu</h3>
+                <p>"I had an amazing experience buying my car here! The staff was friendly and helpful."</p>
+            </div>
+            <div class="review">
+                <img src="customer2.jpg" alt="Customer Photo">
+                <h3>Abdullah Sohail</h3>
+                <p>"Wide selection of vehicles and great financing options. Highly recommend this showroom!"</p>
+            </div>
+            <div class="review">
+                <img src="customer3.jpg" alt="Customer Photo">
+                <h3>Muhammad Khursheed</h3>
+                <p>"Exceptional service and a hassle-free car buying process. I'm very satisfied!"</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
